@@ -6,7 +6,7 @@ import de.robv.android.xposed.callbacks.XC_LoadPackage.LoadPackageParam;
 import de.robv.android.xposed.XC_MethodReplacement;
 
 import de.robv.android.xposed.IXposedHookInitPackageResources;
-import de.robv.android.xposed.callbacks.XC_InitPackageResources;
+import de.robv.android.xposed.callbacks.XC_InitPackageResources.InitPackageResourcesParam;
 
 public class AmbientNotifications implements IXposedHookLoadPackage, IXposedHookInitPackageResources {
 
@@ -28,7 +28,7 @@ public class AmbientNotifications implements IXposedHookLoadPackage, IXposedHook
   }
 
   @Override
-  public void handleInitPackageResources(XC_InitPackageResources.InitPackageResourcesParam ipparam) throws Throwable {
+  public void handleInitPackageResources(final InitPackageResourcesParam ipparam) throws Throwable {
     if (!ipparam.packageName.equals("com.android.systemui")) {
       return;
     }
