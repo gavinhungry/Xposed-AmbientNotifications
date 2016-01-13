@@ -20,7 +20,7 @@ public class AmbientNotifications implements IXposedHookLoadPackage, IXposedHook
       "listenForPulseSignals", boolean.class, new XC_MethodReplacement() {
 
       @Override
-      protected Object replaceHookedMethod(MethodHookParam param) throws Throwable {
+      protected Object replaceHookedMethod(final MethodHookParam param) throws Throwable {
         Boolean listen = (Boolean) param.args[0];
         return XposedHelpers.callMethod(param.thisObject, "listenForNotifications", listen);
       }
