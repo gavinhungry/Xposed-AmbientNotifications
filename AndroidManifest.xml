@@ -15,6 +15,6 @@
       android:value="Enable Ambient Display for Notifications only" />
     <meta-data
       android:name="xposedminversion"
-      android:value="54" />
+      android:value="76" />
   </application>
 </manifest>
